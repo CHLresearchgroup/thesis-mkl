@@ -4,23 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-# def stitch_spectra(spec_580, spec_610):
-#     columns = np.linspace(0, spec_580.shape[0], 1)
-#     newdata = pd.DataFrame(columns=columns)
-#     # store_labels_580 = spec_580['conc_GSSG']
-#     # store_labels_610 = spec_610['conc_GSH']
-#
-#     spec_580 = spec_580.drop(columns=['names'])
-#     spec_610 = spec_610.drop(columns=['names'])
-#
-#     for index, i in spec_580.iterrows():
-#         conc_580 = i.iloc[-1]
-#         i = i.iloc[:, :418].tolist()
-#         for j in spec_610:
-#             conc_610 = j['conc_GSSG']
-#             new = pd.concat(i, j, conc_580/conc_610)
-#             newdata = newdata.append(new)
-#     return newdata
 def is_nan_string(string):
     try:
         # Attempt to convert the string to a float
@@ -109,6 +92,9 @@ def gather_data():
 
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/raw_data/1 mM ox 580 nm17_1.txt', names=['x', 'col2', 'y'])
-    #print(stitch_spectra(contains_580,contains_610))
+
+    contains_580, contains_610 = gather_data()
+    contains_580.to_csv('data/data_580.csv')
+    contains_580['names'].to_csv('data/data_580_names.csv')
+
 
