@@ -13,11 +13,6 @@ import numpy
 import sklearn
 from pybaselines import polynomial
 
-def PCA(x):
-    scalar = StandardScaler()
-    scaled_data = pd.DataFrame(scalar.fit_transform(x))
-    print(scaled_data)
-
 def remove_baseline(x):
     # polynomial fitting for baseline removal
 
@@ -40,7 +35,7 @@ def standardize_byscalar(spectra, scalar):
     return spectra_scaled
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/GSSG_20mM_1min_80mW_580.txt', names=['x', 'col2', 'y'])
+    data = pd.read_csv('data/raw_data/GSSG_20mM_1min_80mW_580.txt', names=['x', 'col2', 'y'])
     data = data.drop(columns=['col2'])
 
-    print(standardize_byscalar(data['y'],2))
+    print(remove_baseline(data['y']))

@@ -1,28 +1,114 @@
 import os
-
 import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import math
 
-if __name__ == '__main__':
-    folder_path = 'data/raman_data'  # filepath to folder of data
-    n = 1340 # length of spectra
-    columns = [i for i in range(1, n)] # create list of same length
-    data = pd.DataFrame(columns=columns) # empty dataframe with columns for each value
-    names = [] # store names of files
+# def stitch_spectra(spec_580, spec_610):
+#     columns = np.linspace(0, spec_580.shape[0], 1)
+#     newdata = pd.DataFrame(columns=columns)
+#     # store_labels_580 = spec_580['conc_GSSG']
+#     # store_labels_610 = spec_610['conc_GSH']
+#
+#     spec_580 = spec_580.drop(columns=['names'])
+#     spec_610 = spec_610.drop(columns=['names'])
+#
+#     for index, i in spec_580.iterrows():
+#         conc_580 = i.iloc[-1]
+#         i = i.iloc[:, :418].tolist()
+#         for j in spec_610:
+#             conc_610 = j['conc_GSSG']
+#             new = pd.concat(i, j, conc_580/conc_610)
+#             newdata = newdata.append(new)
+#     return newdata
+def is_nan_string(string):
+    try:
+        # Attempt to convert the string to a float
+        value = float(string)
+        # Check if the float is NaN
+        return math.isnan(value)
+    except ValueError:
+        # If the conversion raises a ValueError, it's not a valid number
+        return False
+
+def stitch_spectra(spec_580, spec_610):
+    # Initialize an empty list to store DataFrames for concatenation
+    combined_dfs = []
+
+    # Drop the 'names' column from both DataFrames
+    spec_580 = spec_580.drop(columns=['names'])
+    spec_610 = spec_610.drop(columns=['names'])
+
+    # Loop through each row in spec_580
+    for index, row_580 in spec_580.iterrows():
+        # Extract the concentration value from spec_580
+        conc_580 = row_580['conc_GSSG']
+        if is_nan_string(conc_580) == True:
+            conc_580 = 0
+        conc_580 = int(conc_580)
+
+        # Get the first 418 values from spec_580
+        row_580_values = row_580.iloc[:418].tolist()
+
+        # Loop through each row in spec_610
+        for _, row_610 in spec_610.iterrows():
+            # Extract the concentration value from spec_610
+            conc_610 = row_610['conc_GSSG']
+            print(conc_610)
+            if is_nan_string(conc_610) == True:
+                conc_610 = 0
+            conc_610 = int(conc_610)
+
+            # Get the first 418 values from spec_610
+            row_610_values = row_610.iloc[:418].tolist()
+
+            if conc_580 == 0:
+                conc_580 = .01
+            if conc_610 == 0:
+                conc_610 = .01
+
+            # Combine the data from both rows along with the concentration ratio
+            combined_data = row_580_values + row_610_values + [conc_580 / conc_610]
+
+            # Create a DataFrame from the combined data
+            combined_df = pd.DataFrame([combined_data])
+
+            # Append the DataFrame to the list for later concatenation
+            combined_dfs.append(combined_df)
+
+    # Concatenate all DataFrames in the list into a single DataFrame
+    newdata = pd.concat(combined_dfs, ignore_index=True)
+
+    return newdata
+
+def gather_data():
+    folder_path = 'data/raw_data'  # filepath to folder of data
+    n = 1340  # length of spectra
+    columns = [i for i in range(1, n)]  # create list of same length
+    data = pd.DataFrame(columns=columns)  # empty dataframe with columns for each value
+    names = []  # store names of files
     for file in os.listdir(folder_path):
         # loop through files in folder
         filepath = os.path.join(folder_path, file)
-        text = pd.read_csv(filepath, names=['x','col2','y']) # import text file
+        text = pd.read_csv(filepath, names=['x', 'col2', 'y'])  # import text file
         names.append(file)
-        data.loc[len(data.index)] = text['y'].transpose() # add text file data to the dataframe
-    data.insert(0, 'names', names, True) # add name column
+        data.loc[len(data.index)] = text['y'].transpose()  # add text file data to the dataframe
+    data.insert(0, 'names', names, True)  # add name column
 
     # adding feature columns and labels
-    data['conc_GSSG'] = data['names'].str.extract(r'(?:.*GSH.*)?(\d+\s*mM)')[0] # these lines from chatGPT
+    data['conc_GSSG'] = data['names'].str.extract(r'(?:.*GSH.*)?(\d+\s*mM)')[0]  # these lines from chatGPT
     data['conc_GSSG'] = data['conc_GSSG'].str.replace('mM', '').str.strip()
 
     contains_580 = data[data['names'].str.contains('580')]
     contains_610 = data[data['names'].str.contains('610')]
 
-    print(data)
-    print(contains_610)
-    print(contains_580)
+    #contains_580 = contains_580.drop(columns=['names', 'conc_GSSG'])
+    #contains_610 = contains_610.drop(columns=['names', 'conc_GSSG'])
+
+    return contains_580, contains_610
+
+
+if __name__ == '__main__':
+    data = pd.read_csv('data/raw_data/1 mM ox 580 nm17_1.txt', names=['x', 'col2', 'y'])
+    #print(stitch_spectra(contains_580,contains_610))
+
