@@ -25,11 +25,6 @@ def standardize_byscalar(spectra, scalar):
     return spectra_scaled
 
 def normalize(spectra):
-    names = spectra['names']
-    concentrations = spectra['conc_GSSG']
-
-    spectra = spectra.drop(columns=['names','conc_GSSG','index'])
-
     normalized = []
 
     for index, rowy in spectra.iterrows():
@@ -40,9 +35,6 @@ def normalize(spectra):
         normalized_df = pd.DataFrame(row, columns=rowy.index)
         normalized.append(normalized_df)
     normalized_spectra = pd.concat(normalized, axis=0, ignore_index=True)
-
-    #normalized_spectra['names'] = names
-    normalized_spectra['conc_GSSG'] = concentrations
 
     return normalized_spectra
 
@@ -65,15 +57,11 @@ def PCA2(data):
 def remove_baseline(spectra):
     # polynomial fitting for baseline removal
 
-    concentrations = spectra['conc_GSSG']
-
-    spectra = spectra.drop(columns=['conc_GSSG'])
-
     baseline_removed = []
     for index, rowy in spectra.iterrows():
         row = rowy.values.reshape(-1, 1)
         row = row.flatten()
-        row_polyfit = pybaselines.polynomial.modpoly(row)[0]
+        row_polyfit = pybaselines.polynomial.modpoly(row, poly_order=5)[0]
         # plt.plot(row)
         # plt.plot(row_polyfit)
         # plt.show()
@@ -84,16 +72,17 @@ def remove_baseline(spectra):
         baseline_removed.append(normalized_df)
 
     baselined_spectra = pd.concat(baseline_removed, axis=0, ignore_index=True)
-    baselined_spectra['conc_GSSG'] = concentrations
 
     return baselined_spectra
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/data_610.csv')
+    data = pd.read_csv('data/data_580_BR.csv')
 
-    print(remove_baseline(data))
-    plt.plot(remove_baseline(data).iloc[4])
-    plt.show()
+    data = normalize(data)
+    data.to_csv('data/data_580_BR_NM.csv', index=False)
+
+
+
 
     # cleaned up 580 data by removing all of the messed up spectra manually
     # need to do this for the 610 spectra
