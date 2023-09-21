@@ -39,19 +39,15 @@ def normalize(spectra):
     return normalized_spectra
 
 
-def PCA1(data, known_components):
-    pca = PCA(n_components=2)
-
-    # Fit the PCA model with your known components
-    pca.components_ = known_components
-
-    # Transform your data using the PCA model (X should be your data)
-    X_transformed = pca.transform(data)
-
-    return X_transformed
-
-def PCA2(data):
-    pca = PCA(n_components=2)
+def PCA1(data, n):
+    columns_ = [i for i in range(n)]
+    print(columns_)
+    pca = PCA(n_components=n)
+    pca = pca.fit(data)
+    ratio = pca.explained_variance_ratio_
+    pca_components = pca.transform(data)
+    pca_Df = pd.DataFrame(data=pca_components, columns=[columns_])
+    return pca_Df, ratio
 
 
 def remove_baseline(spectra):
@@ -76,10 +72,11 @@ def remove_baseline(spectra):
     return baselined_spectra
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/data_580_BR.csv')
+    data = pd.read_csv('data/data_580_BR_NM.csv')
 
-    data = normalize(data)
-    data.to_csv('data/data_580_BR_NM.csv', index=False)
+    df, ratio = PCA1(data, 4)
+    print(df, sum(ratio))
+
 
 
 
