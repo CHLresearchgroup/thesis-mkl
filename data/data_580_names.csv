@@ -1,106 +1,106 @@
-,names
-3,phos GSSG 20mM 1 min 80 mW 580 nm249_1.txt
-4,GSSG 50mM in PEG 10percent 580nm 5min 80mW92_1.txt
-5,GSH 30mM in PEG 10percent 580nm 5min 80mW105_1.txt
-6,GSSG 50mM 1 min 80 mW 580 nm50_1.txt
-8,50 mM GSH in BSA 580 nm 1min 80mW126_1.txt
-10,GSSG 1mM 1 min 80 mW 580 nm141_1.txt
-11,BSA GSSG 80mM 1 min 80 mW 580 nm205_1.txt
-13,BSA GSSG 90mM 1 min 80 mW 580 nm204_1.txt
-14,GSSG_50mM_580nm_15sec_phos46_1.txt
-15,GSSG 9mM 1 min 80 mW 580 nm126_1.txt
-17,GSH 10 mM 30 sec 580 nm70_1.txt
-19,GSSG 20mM 1 min 80 mW 580 nm54_1.txt
-21,phos GSSG 30mM 1 min 80 mW 580 nm248_1.txt
-27,25 mM GSH in BSA 580 nm 1min 80mW143_1.txt
-28,BSA GSSG 60mM 1min 80 mW 580 nm193_1.txt
-32,BSA GSSG 10mM 1 min 80 mW 580 nm212_1.txt
-34,50 mM GSH in BSA 580 nm 1min 80mW139_1.txt
-35,GSSG 5mM 1 min 80 mW 580 nm137_1.txt
-37,BSA GSSG 70mM 1min 80 mW 580 nm192_1.txt
-38,GSSG 5mM 580nm 3 min 80mW10_1.txt
-43,100 mM GSH in BSA 580 nm 1min 80mW135_1.txt
-44,25 mM GSSG in BSA 580 nm 1min 80mW146_1.txt
-46,GSH_50mM_580nm_15sec_phos41_1.txt
-48,GSSG 100mM 1 min 80 mW 580 nm45_1.txt
-49,GSSG 30mM 1 min 80 mW 580 nm53_1.txt
-52,GSSG_50mM_580nm_15sec_phos47_1.txt
-54,GSSG 30mM 1min 80 mW 580 nm87_1.txt
-55,GSSG 90mM 1 min 80 mW 580 nm46_1.txt
-57,PEG 1 min 80 mW 580 nm57_1.txt
-58,GSSG 40mM 1 min 80 mW 580 nm52_1.txt
-64,GSSG 80mM 1 min 80 mW 580 nm47_1.txt
-66,100 mM GSSG in BSA 580 nm 1min 80mW138_1.txt
-68,GSSG 1mM 1 min 80 mW 580 nm164_1.txt
-69,50 mM GSSG in BSA 580 nm 1min 80mW129_1.txt
-72,BSA 1min 80 mW 580 nm200_1.txt
-73,GSSG_50mM_580nm_15sec_phos45_1.txt
-77,GSSG 5 mM in PEG 580nm 3 min 84mW8_1.txt
-79,GSH 50mM in PEG 10percent 580nm 5min 80mW97_1.txt
-80,phos GSSG 60mM 1 min 80 mW 580 nm245_1.txt
-81,GSSG 10 mM 30 sec 580 nm73_1.txt
-86,BSA baseline 580nm 3 min 80mW4_1.txt
-88,GSH_50mM_580nm_15sec_phos40_1.txt
-90,BSA GSSG 80mM 1min 80 mW 580 nm191_1.txt
-91,30mM GSH 580 nm 1 min10_1.txt
-93,GSSG 6mM 1 min 80 mW 580 nm159_1.txt
-95,phos GSSG 70mM 1 min 80 mW 580 nm244_1.txt
-96,GSSG 7mM 1 min 80 mW 580 nm158_1.txt
-97,GSSG 10 mM in PEG 580nm 3 min 84mW7_1.txt
-98,BSA GSSG 100mM 1 min 80 mW 580 nm203_1.txt
-99,BSA GSSG 90mM 1min 80 mW 580 nm190_1.txt
-101,PEG 1 min 80 mW 580 nm176_1.txt
-103,GSSG 15mM 580nm 3 min 80mW8_1.txt
-104,GSH_50mM_580nm_15sec38_1.txt
-106,25mM_GSH_BSA_580_nm_60s.txt
-109,GSSG 6mM 1 min 80 mW 580 nm134_1.txt
-111,BSA GSSG 10mM 1min 80 mW 580 nm198_1.txt
-114,50 mM GSSG in BSA 580 nm 1min 80mW142_1.txt
-116,GSH 10 mM in PEG 580nm 5 min 84mW5_1.txt
-117,BSA GSSG 70mM 1 min 80 mW 580 nm206_1.txt
-120,25mM_GSH_BSA_580_nm_60s_2.txt
-122,BSA GSSG 60mM 1 min 80 mW 580 nm207_1.txt
-126,30mM GSH 580 nm 30 s7_1.txt
-127,GSSG 8mM 1 min 80 mW 580 nm135_1.txt
-128,GSSG 30mM in PEG 10percent 580nm 5min 80mW100_1.txt
-133,GSSG 9mM 1 min 80 mW 580 nm129_1.txt
-136,GSSG 4mM 1 min 80 mW 580 nm161_1.txt
-137,GSSG 10mM 1 min 80 mW 580 nm55_1.txt
-138,GSSG 10mM 1 min 80 mW 580 nm155_1.txt
-139,GSSG 10mM 580nm 3 min 80mW9_1.txt
-141,BSA GSSG 30mM 1 min 80 mW 580 nm210_1.txt
-143,GSSG 5mM 1 min 80 mW 580 nm160_1.txt
-146,GSSG 3mM 1 min 80 mW 580 nm139_1.txt
-148,GSSG_20mM_1min_80mW_580.txt
-149,GSSG 20 mM 30 sec 580 nm76_1.txt
-150,BSA GSSG 20mM 1 min 80 mW 580 nm211_1.txt
-151,BSA GSSG 50mM 1min 80 mW 580 nm194_1.txt
-153,PEG 10percent 580nm 1min 80mW90_1.txt
-157,GSSG 2mM 1 min 80 mW 580 nm140_1.txt
-160,BSA GSSG 40mM 1min 80 mW 580 nm195_1.txt
-161,GSSG 2mM 1 min 80 mW 580 nm163_1.txt
-164,phos GSSG 80mM 1 min 80 mW 580 nm243_1.txt
-165,GSSG 3 mM in PEG 580nm 3 min 84mW9_1.txt
-167,GSSG 4mM 1 min 80 mW 580 nm138_1.txt
-168,GSSG 7mM 1 min 80 mW 580 nm136_1.txt
-172,GSSG 3mM 1 min 80 mW 580 nm162_1.txt
-175,BSA GSSG 30mM 1min 80 mW 580 nm196_1.txt
-178,GSSG 30mM 580nm 3 min 80mW6_1.txt
-179,GSH_50mM_580nm_15sec39_1.txt
-180,phos GSSG 1mM 1 min 80 mW 580 nm241_1.txt
-181,GSSG 9mM 1 min 80 mW 580 nm156_1.txt
-182,BSA 1 min 80 mW 580 nm213_1.txt
-183,BSA GSSG 20mM 1min 80 mW 580 nm197_1.txt
-185,phos GSSG 90mM 1 min 80 mW 580 nm242_1.txt
-186,GSSG 8mM 1 min 80 mW 580 nm157_1.txt
-189,GSSG 8mM 3min 80 mW 580 nm89_1.txt
-190,GSSG 9mM 3min 80 mW 580 nm88_1.txt
-191,BSA GSSG 40mM 1 min 80 mW 580 nm209_1.txt
-193,GSSG 20mM 580nm 3 min 80mW7_1.txt
-194,GSSG 60mM 1 min 80 mW 580 nm49_1.txt
-198,GSSG 70mM 1 min 80 mW 580 nm48_1.txt
-201,phos GSSG 40mM 1 min 80 mW 580 nm247_1.txt
-202,25 mM GSSG in BSA 580 nm 1min 80mW146_1 - Copy.txt
-204,phos GSSG 50mM 1 min 80 mW 580 nm246_1.txt
-208,BSA GSSG 50mM 1 min 80 mW 580 nm208_1.txt
-210,GSSG 9mM 1 min 80 mW 580 nm131_1.txt
+names
+phos GSSG 20mM 1 min 80 mW 580 nm249_1.txt
+GSSG 50mM in PEG 10percent 580nm 5min 80mW92_1.txt
+GSH 30mM in PEG 10percent 580nm 5min 80mW105_1.txt
+GSSG 50mM 1 min 80 mW 580 nm50_1.txt
+50 mM GSH in BSA 580 nm 1min 80mW126_1.txt
+GSSG 1mM 1 min 80 mW 580 nm141_1.txt
+BSA GSSG 80mM 1 min 80 mW 580 nm205_1.txt
+BSA GSSG 90mM 1 min 80 mW 580 nm204_1.txt
+GSSG_50mM_580nm_15sec_phos46_1.txt
+GSSG 9mM 1 min 80 mW 580 nm126_1.txt
+GSH 10 mM 30 sec 580 nm70_1.txt
+GSSG 20mM 1 min 80 mW 580 nm54_1.txt
+phos GSSG 30mM 1 min 80 mW 580 nm248_1.txt
+25 mM GSH in BSA 580 nm 1min 80mW143_1.txt
+BSA GSSG 60mM 1min 80 mW 580 nm193_1.txt
+BSA GSSG 10mM 1 min 80 mW 580 nm212_1.txt
+50 mM GSH in BSA 580 nm 1min 80mW139_1.txt
+GSSG 5mM 1 min 80 mW 580 nm137_1.txt
+BSA GSSG 70mM 1min 80 mW 580 nm192_1.txt
+GSSG 5mM 580nm 3 min 80mW10_1.txt
+100 mM GSH in BSA 580 nm 1min 80mW135_1.txt
+25 mM GSSG in BSA 580 nm 1min 80mW146_1.txt
+GSH_50mM_580nm_15sec_phos41_1.txt
+GSSG 100mM 1 min 80 mW 580 nm45_1.txt
+GSSG 30mM 1 min 80 mW 580 nm53_1.txt
+GSSG_50mM_580nm_15sec_phos47_1.txt
+GSSG 30mM 1min 80 mW 580 nm87_1.txt
+GSSG 90mM 1 min 80 mW 580 nm46_1.txt
+PEG 1 min 80 mW 580 nm57_1.txt
+GSSG 40mM 1 min 80 mW 580 nm52_1.txt
+GSSG 80mM 1 min 80 mW 580 nm47_1.txt
+100 mM GSSG in BSA 580 nm 1min 80mW138_1.txt
+GSSG 1mM 1 min 80 mW 580 nm164_1.txt
+50 mM GSSG in BSA 580 nm 1min 80mW129_1.txt
+BSA 1min 80 mW 580 nm200_1.txt
+GSSG_50mM_580nm_15sec_phos45_1.txt
+GSSG 5 mM in PEG 580nm 3 min 84mW8_1.txt
+GSH 50mM in PEG 10percent 580nm 5min 80mW97_1.txt
+phos GSSG 60mM 1 min 80 mW 580 nm245_1.txt
+GSSG 10 mM 30 sec 580 nm73_1.txt
+BSA baseline 580nm 3 min 80mW4_1.txt
+GSH_50mM_580nm_15sec_phos40_1.txt
+BSA GSSG 80mM 1min 80 mW 580 nm191_1.txt
+30mM GSH 580 nm 1 min10_1.txt
+GSSG 6mM 1 min 80 mW 580 nm159_1.txt
+phos GSSG 70mM 1 min 80 mW 580 nm244_1.txt
+GSSG 7mM 1 min 80 mW 580 nm158_1.txt
+GSSG 10 mM in PEG 580nm 3 min 84mW7_1.txt
+BSA GSSG 100mM 1 min 80 mW 580 nm203_1.txt
+BSA GSSG 90mM 1min 80 mW 580 nm190_1.txt
+PEG 1 min 80 mW 580 nm176_1.txt
+GSSG 15mM 580nm 3 min 80mW8_1.txt
+GSH_50mM_580nm_15sec38_1.txt
+25mM_GSH_BSA_580_nm_60s.txt
+GSSG 6mM 1 min 80 mW 580 nm134_1.txt
+BSA GSSG 10mM 1min 80 mW 580 nm198_1.txt
+50 mM GSSG in BSA 580 nm 1min 80mW142_1.txt
+GSH 10 mM in PEG 580nm 5 min 84mW5_1.txt
+BSA GSSG 70mM 1 min 80 mW 580 nm206_1.txt
+25mM_GSH_BSA_580_nm_60s_2.txt
+BSA GSSG 60mM 1 min 80 mW 580 nm207_1.txt
+30mM GSH 580 nm 30 s7_1.txt
+GSSG 8mM 1 min 80 mW 580 nm135_1.txt
+GSSG 30mM in PEG 10percent 580nm 5min 80mW100_1.txt
+GSSG 9mM 1 min 80 mW 580 nm129_1.txt
+GSSG 4mM 1 min 80 mW 580 nm161_1.txt
+GSSG 10mM 1 min 80 mW 580 nm55_1.txt
+GSSG 10mM 1 min 80 mW 580 nm155_1.txt
+GSSG 10mM 580nm 3 min 80mW9_1.txt
+BSA GSSG 30mM 1 min 80 mW 580 nm210_1.txt
+GSSG 5mM 1 min 80 mW 580 nm160_1.txt
+GSSG 3mM 1 min 80 mW 580 nm139_1.txt
+GSSG_20mM_1min_80mW_580.txt
+GSSG 20 mM 30 sec 580 nm76_1.txt
+BSA GSSG 20mM 1 min 80 mW 580 nm211_1.txt
+BSA GSSG 50mM 1min 80 mW 580 nm194_1.txt
+PEG 10percent 580nm 1min 80mW90_1.txt
+GSSG 2mM 1 min 80 mW 580 nm140_1.txt
+BSA GSSG 40mM 1min 80 mW 580 nm195_1.txt
+GSSG 2mM 1 min 80 mW 580 nm163_1.txt
+phos GSSG 80mM 1 min 80 mW 580 nm243_1.txt
+GSSG 3 mM in PEG 580nm 3 min 84mW9_1.txt
+GSSG 4mM 1 min 80 mW 580 nm138_1.txt
+GSSG 7mM 1 min 80 mW 580 nm136_1.txt
+GSSG 3mM 1 min 80 mW 580 nm162_1.txt
+BSA GSSG 30mM 1min 80 mW 580 nm196_1.txt
+GSSG 30mM 580nm 3 min 80mW6_1.txt
+GSH_50mM_580nm_15sec39_1.txt
+phos GSSG 1mM 1 min 80 mW 580 nm241_1.txt
+GSSG 9mM 1 min 80 mW 580 nm156_1.txt
+BSA 1 min 80 mW 580 nm213_1.txt
+BSA GSSG 20mM 1min 80 mW 580 nm197_1.txt
+phos GSSG 90mM 1 min 80 mW 580 nm242_1.txt
+GSSG 8mM 1 min 80 mW 580 nm157_1.txt
+GSSG 8mM 3min 80 mW 580 nm89_1.txt
+GSSG 9mM 3min 80 mW 580 nm88_1.txt
+BSA GSSG 40mM 1 min 80 mW 580 nm209_1.txt
+GSSG 20mM 580nm 3 min 80mW7_1.txt
+GSSG 60mM 1 min 80 mW 580 nm49_1.txt
+GSSG 70mM 1 min 80 mW 580 nm48_1.txt
+phos GSSG 40mM 1 min 80 mW 580 nm247_1.txt
+25 mM GSSG in BSA 580 nm 1min 80mW146_1 - Copy.txt
+phos GSSG 50mM 1 min 80 mW 580 nm246_1.txt
+BSA GSSG 50mM 1 min 80 mW 580 nm208_1.txt
+GSSG 9mM 1 min 80 mW 580 nm131_1.txt

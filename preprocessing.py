@@ -67,7 +67,7 @@ def remove_baseline(spectra):
 
     concentrations = spectra['conc_GSSG']
 
-    spectra = spectra.drop(columns=['conc_GSSG', 'index'])
+    spectra = spectra.drop(columns=['conc_GSSG'])
 
     baseline_removed = []
     for index, rowy in spectra.iterrows():
@@ -89,7 +89,7 @@ def remove_baseline(spectra):
     return baselined_spectra
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/data_580.csv')
+    data = pd.read_csv('data/data_610.csv')
 
     print(remove_baseline(data))
     plt.plot(remove_baseline(data).iloc[4])

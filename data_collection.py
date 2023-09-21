@@ -90,11 +90,14 @@ def gather_data():
 
     return contains_580, contains_610
 
+def drop_missingvals(spectra):
+    spectra = spectra.drop(columns='563')
+    return spectra
+
+
 
 if __name__ == '__main__':
-
-    contains_580, contains_610 = gather_data()
-    contains_580.to_csv('data/data_580.csv')
-    contains_580['names'].to_csv('data/data_580_names.csv')
+    contains_580 = pd.read_csv('data/data_580.csv')
+    contains_610 = pd.read_csv('data/data_610.csv')
 
 
