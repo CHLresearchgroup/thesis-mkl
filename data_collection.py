@@ -4,6 +4,40 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
+def separate_bysol():
+    # Define the substrings to search for
+    substrings = ['BSA', 'PEG', 'phos']
+
+    # Initialize a dictionary to store the column values
+    result_dict = {substring: [] for substring in substrings}
+    result_dict['phos'] = []
+
+    # Iterate through the DataFrame and check for each substring
+    for index, row in df.iterrows():
+        found_substring = False
+
+        for substring in substrings:
+            if substring in row['names']:
+                result_dict[substring].append(index)
+                found_substring = True
+
+        if not found_substring:
+            result_dict['phos'].append(index)
+
+    # Find the maximum length of the lists in the dictionary
+    max_length = max(len(indices) for indices in result_dict.values())
+
+    # Pad the lists with NaN values to make them the same length
+    for key in result_dict.keys():
+        result_dict[key].extend([np.nan] * (max_length - len(result_dict[key])))
+
+    # Convert the dictionary to a DataFrame
+    result_df = pd.DataFrame(result_dict)
+
+    # result_df.to_csv('data/separate_by_sol_580.csv', index=False)
+    return result_df
+
+
 def is_nan_string(string):
     try:
         # Attempt to convert the string to a float
@@ -97,8 +131,28 @@ def drop_missingvals(spectra):
 
 
 if __name__ == '__main__':
-    contains_580 = pd.read_csv('data/data_580.csv')
-    contains_610 = pd.read_csv('data/data_610.csv')
+    df = pd.read_csv('data/separate_by_sol_580.csv')
+    contains_580 = pd.read_csv('data/data_580_BR_NM.csv')
+
+    result = pd.DataFrame(columns=contains_580.columns)
+    for i in df['BSA']:
+        i = int(i)
+        print(i)
+        if is_nan_string(i) == True:
+            result.to_csv('data/BSAdata_580_BR_NM.csv')
+            break
+        row = contains_580.iloc[i]
+        row = pd.DataFrame([row])
+        print(result)
+        result = pd.concat([result, row], ignore_index=True)
+
+    result.to_csv('data/BSAdata_580_BR_NM.csv')
+
+    # continue trying to make dataframes separated by sample
+    # why does it leave the last value out?
+    # why doesn't BSA work?
+    # then perform pca on different solutions- prove to casey which component is which
+
 
 
 
