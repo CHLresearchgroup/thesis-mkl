@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-def separate_bysol():
+def separate_bysol(df):
     # Define the substrings to search for
     substrings = ['BSA', 'PEG', 'phos']
 
@@ -128,25 +128,25 @@ def drop_missingvals(spectra):
     spectra = spectra.drop(columns='563')
     return spectra
 
-
-
-if __name__ == '__main__':
-    df = pd.read_csv('data/separate_by_sol_580.csv')
-    contains_580 = pd.read_csv('data/data_580_BR_NM.csv')
-
-    result = pd.DataFrame(columns=contains_580.columns)
-    for i in df['BSA']:
-        i = int(i)
-        print(i)
+def sort_usingsol_index(df, key):
+    for i in df[key]:
         if is_nan_string(i) == True:
-            result.to_csv('data/BSAdata_580_BR_NM.csv')
+            result.to_csv('data/phosdata_580_BR_NM.csv', index=False)
             break
+        i = int(i)
         row = contains_580.iloc[i]
         row = pd.DataFrame([row])
-        print(result)
         result = pd.concat([result, row], ignore_index=True)
 
-    result.to_csv('data/BSAdata_580_BR_NM.csv')
+    return None
+
+if __name__ == '__main__':
+    df = pd.read_csv('data/data_610_names.csv')
+    contains_580 = pd.read_csv('data/data_610_BR_NM.csv')
+
+    result = pd.DataFrame(columns=contains_580.columns)
+    separate_bysol(df).to_csv('data/separate_by_sol_610.csv')
+
 
     # continue trying to make dataframes separated by sample
     # why does it leave the last value out?

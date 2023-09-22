@@ -72,13 +72,16 @@ def remove_baseline(spectra):
     return baselined_spectra
 
 if __name__ == '__main__':
-    data = pd.read_csv('data/pca_data/allsol_580_BR_NM_5com.csv')
-    plt.scatter(data['0'], data['3'])
-    plt.show()
-    #
-    # df, ratio = PCA1(data, 3)
-    # df.to_csv('data/pca_data/allsol_610_BR_NM_3com.csv', index=False)
+    data1 = pd.read_csv('data/pca_data/allsol_580_BR_NM_3com.csv')
+    data2 = pd.read_csv('data/pca_data/PEG_580_BR_NM_2com.csv')
+
+    # df, ratio = PCA1(data, 2)
+    # df.to_csv('data/pca_data/phos_580_BR_NM_2com.csv', index=False)
     # print(sum(ratio))
+
+    plt.scatter(data1['0'], data1['1'])
+    #plt.scatter(data2['0'], data2['1'])
+    plt.show()
 
 
 
