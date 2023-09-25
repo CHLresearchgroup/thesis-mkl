@@ -7,7 +7,6 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 import pandas as pd
-from tqdm import tqdm
 import math
 
 def create_trainingandtest(x, y):
@@ -17,8 +16,9 @@ def create_trainingandtest(x, y):
     y = y.dropna()
     y = np.array(y)
 
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.1)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.15)
     return x_train, x_test, y_train, y_test
+
 
 def evaluate_withmodels(xset, yset, models, iter=10):
     """
@@ -61,7 +61,33 @@ def evaluate_withmodels(xset, yset, models, iter=10):
     return output
 
 if __name__ == '__main__':
-    pca = pd.read_csv('data/pca_data/allsol_580_BR_NM_5com.csv')
-    yvals = pd.read_csv('data/data_580_concentrations.csv')
+    pca = pd.read_csv('data/pca_data/allsol_610_BR_NM_3com.csv')
+    yvals = pd.read_csv('data/data_610_concentrations.csv')
 
     x_train, x_test, y_train, y_test = create_trainingandtest(pca, yvals)
+
+    # models:
+    RF = RandomForestRegressor()
+    SVM = svm.SVR()
+    GBRT = GradientBoostingRegressor(alpha=.02, n_estimators=500)
+    MLP = MLPRegressor(random_state=1, max_iter=500)
+    KR = KernelRidge()
+    KNN = KNeighborsRegressor()
+    #HGBR = HistGradientBoostingRegressor(max_leaf_nodes=100)
+    models = [KR, SVM, RF, GBRT]
+
+    model = MLP
+    i = 0
+    list = []
+    while i < 30:
+        x_train, x_test, y_train, y_test = create_trainingandtest(pca, yvals)
+        model.fit(x_train, y_train)
+        y_pred = model.predict(x_test)
+        mae = mean_absolute_error(y_test, y_pred)
+        print(mae)
+        list.append(mae)
+        i += 1
+
+    print('30 fold cv score:', np.average(list))
+    avg = np.average(yvals)
+    #print(y_pred, y_test)
