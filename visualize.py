@@ -3,18 +3,6 @@ import numpy as np
 import pandas as pd
 from data_collection import is_nan_string
 
-
-# def separate_by_sol_andplot(data, indices):
-#         output = pd.DataFrame(columns=['0', '1'])
-#         for i in indices:
-#             if is_nan_string(i) == True:
-#                 return output
-#             i = int(i)
-#             rowy = data.iloc[i]
-#             rowy = rowy.T
-#             output = pd.concat([output, rowy])
-
-
 def separate_by_sol_andplot(data, indices):
     transposed_rows = []  # Collect transposed rows in a list
 
@@ -44,7 +32,7 @@ if __name__ == '__main__':
     pegdf = separate_by_sol_andplot(pcadata, soldata['PEG'])
     phosdf = separate_by_sol_andplot(pcadata, soldata['phos'])
 
-    #plt.scatter(bsadf['0'], bsadf['1'])
+    plt.scatter(bsadf['0'], bsadf['1'])
     plt.scatter(pegdf['0'], pegdf['1'])
     plt.scatter(phosdf['0'], phosdf['1'])
     plt.show()
