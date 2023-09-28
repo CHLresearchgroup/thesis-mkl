@@ -2,9 +2,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pybaselines.polynomial
 from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
+from sklearn.decomposition import PCA, FastICA
 import numpy as np
-from scipy import sparse
+from scipy import sparse, stats
 from scipy.sparse.linalg import spsolve
 from BaselineRemoval import BaselineRemoval
 import matplotlib.pyplot as plt
@@ -41,12 +41,11 @@ def normalize(spectra):
 
 def PCA1(data, n):
     columns_ = [i for i in range(n)]
-    print(columns_)
     pca = PCA(n_components=n)
     pca = pca.fit(data)
     ratio = pca.explained_variance_ratio_
     pca_components = pca.transform(data)
-    pca_Df = pd.DataFrame(data=pca_components, columns=[columns_])
+    pca_Df = pd.DataFrame(data=pca_components, columns=columns_)
     return pca_Df, ratio
 
 
@@ -71,34 +70,35 @@ def remove_baseline(spectra):
 
     return baselined_spectra
 
+def fast_ICA(data, n):
+    model = FastICA(n_components= n, whiten='unit-variance')
+    columns_ = [i for i in range(n)]
+    data = model.fit_transform(data)
+    data = pd.DataFrame(data=data, columns=columns_)
+    return data
+
 if __name__ == '__main__':
     data1 = pd.read_csv('data/pca_data/allsol_580_BR_NM_3com.csv')
     data2 = pd.read_csv('data/pca_data/PEG_580_BR_NM_3com.csv')
     data = pd.read_csv('data/data_610_BR_NM.csv')
     data3 = pd.read_csv('data/data_580_BR_NM.csv')
 
-    plt.plot(data.iloc[1])
-    plt.plot(data3.iloc[1])
+    rawdata = pd.read_csv('data/data_580_BR_NM.csv')
+    concentrations = pd.read_csv('data/data_580_concentrations.csv')
+
+    x = fast_ICA(data1, 3)
+    print(x)
+    #plt.plot(data1.iloc[1])
+    plt.plot(x.iloc[0])
     plt.show()
-    # df, ratio = PCA1(data, 30)
-    # print(sum(ratio))
-    #df.to_csv('data/pca_data/allsol_610_BR_NM_30com.csv', index=False)
-    # print(sum(ratio))
-
-    #plt.scatter(data1['0'], data1['1'])
-    #plt.scatter(data2['0'], data2['1'])
-    #plt.show()
 
 
 
 
 
-    # cleaned up 580 data by removing all of the messed up spectra manually
-    # need to do this for the 610 spectra
-    # then need to remove the baseline in all of the spectra
-    # then save
-    # then normalize
-    # then u can do PCA
+
+    # next steps
+    # whiten data for fast ICA
 
 
 

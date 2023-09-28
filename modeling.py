@@ -61,8 +61,14 @@ def evaluate_withmodels(xset, yset, models, iter=10):
     return output
 
 if __name__ == '__main__':
-    pca = pd.read_csv('data/pca_data/allsol_610_BR_NM_3com.csv')
+    pca = pd.read_csv('data/pca_data/test.csv')
     yvals = pd.read_csv('data/data_610_concentrations.csv')
+    yvals = pca['0']
+    pca = pca.drop(columns=['0'])
+    pca = pca.T
+    yvals = yvals.T
+    print(pca)
+    print(yvals)
 
     x_train, x_test, y_train, y_test = create_trainingandtest(pca, yvals)
 
